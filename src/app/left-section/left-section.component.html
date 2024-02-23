@@ -1,0 +1,16 @@
+<div class="left-sidebar">
+    <div class="imp-links">
+        <a *ngFor="let imageUrl of imageUrls; let i = index" href="#">
+          <img [src]="imageUrl">
+          <span>{{ texts[i] }}</span>
+        </a>
+        <a href="#">See More</a>
+      </div>
+      <div class="shortcut-link">
+        <p>Your Shortcuts</p>
+        <a *ngFor="let shortcutImageUrl of shortcutImageUrls; let i = index" href="#">
+          <img [src]="shortcutImageUrl">
+          <span>{{ shortcutTexts[i] }}</span>
+        </a>
+      </div>
+</div>

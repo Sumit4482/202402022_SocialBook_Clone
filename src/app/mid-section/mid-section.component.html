@@ -1,0 +1,54 @@
+<div class="main-content">
+    <div class="story-gallery">
+        <div *ngFor="let storyImageUrl of storyImageUrls; let i = index" 
+             class="story story{{i+1}}" 
+             [style.background-image]="'url(' + storyBackgroundImages[i] + ')'">
+          <img [src]="storyImageUrl">
+          <p>{{ storyTexts[i] }}</p>
+        </div>
+      </div>
+      <div class="write-post-container">
+        <div class="user-profile">
+            <img src={{profileIconUrl}}>
+            <div>
+                <p>{{ firstName }} {{ lastName }}</p>
+                <small>BJP <i class="fas fa-caret-down"></i></small>
+            </div>
+        
+      </div>
+        <div class="post-input-container">
+            <textarea rows="3" placeholder="Howdy Modi ?"></textarea>
+            <div class="add-post-links">
+                <a href="#"><img src="https://i.postimg.cc/QMD2BDXs/live-video.png">Live Video</a>
+                <a href="#"><img src="https://i.postimg.cc/6pKKZn0D/photo.png">Photo/Video</a>
+                <a href="#"><img src="https://i.postimg.cc/Pf6TBCdD/feeling.png">Feling/Activity</a>
+            </div>
+        </div>
+    </div>
+    <div *ngFor="let post of posts" class="post-container">
+        <div class="post-row">
+          <div class="user-profile">
+            <img [src]="post.userProfileImageUrl">
+            <div>
+              <p>{{ post.userName }}</p>
+              <span>{{ post.postDateTime }}</span>
+            </div>
+          </div>
+          <a href="#"><i class="fas fa-ellipsis-v"></i></a>
+        </div>
+        <p class="post-text">{{ post.postText }}</p>
+        <img [src]="post.postImageUrl" class="post-img">
+        <div class="post-row">
+          <div class="activity-icons">
+            <div><img src="https://i.postimg.cc/pLKNXrMq/like-blue.png">120</div>
+            <div><img src="https://i.postimg.cc/rmjMymWv/comments.png">45</div>
+            <div><img src="https://i.postimg.cc/T2bBchpG/share.png">20</div>
+          </div>
+          <div class="post-profile-icon">
+            <img src="https://i.postimg.cc/cHg22LhR/profile-pic.png"><i class="fas fa-caret-down"></i>
+          </div>
+        </div>
+      </div>
+      
+    <button type="button" class="load-more-btn">Load More</button>
+</div>
